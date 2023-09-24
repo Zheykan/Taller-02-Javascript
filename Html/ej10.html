@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>Ejercicios JavaScript #10</title>
+</head>
+
+<body>
+    <h1 class="py-2 px-5">¿Quien es mayor?</h1>
+    
+    <div class="row px-4 mx-0">
+        <p>Ingrese el nombre, apellido y fecha de nacimiento de los participantes 
+        y el sistema te dira quien es mayor.</p>
+        <div class="col-5">
+            <form action="" method="get" id="age_1">
+                <label for="Input_nombre_1" class="form-label">
+                    <h5 class="py-2">Nombre participante 1:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control bg-opacity-75" id="Input_nombre_1" placeholder="Nombre"
+                        aria-describedby="textHelp">
+                    <div id="textHelp" class="form-text px-2">Ingrese unicamente el nombre en mayusculas.</div>
+                </div>
+                <label for="Input_apellido_1" class="form-label">
+                    <h5 class="py-2">Apellido participante 1:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control bg-opacity-75" id="Input_apellido_1" placeholder="Apellido"
+                        aria-describedby="textHelp">
+                    <div id="textHelp" class="form-text px-2">Ingrese unicamente el apellido en mayusculas.</div>
+                </div>
+                <label for="Input_fecha_n1" class="form-label">
+                    <h5 class="py-2">Fecha de nacimiento participante 1:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control bg-opacity-75" id="Input_fecha_n1" placeholder="Fecha de Nacimiento"
+                        aria-describedby="dateHelp">
+                    <div id="dateHelp" class="form-text px-2">Busca tu fecha de nacimiento.</div>
+                </div>
+            </form>
+        </div>
+        <div class="col-5">
+            <form action="" method="get" id="age_2">
+                <label for="Input_nombre_2" class="form-label">
+                    <h5 class="py-2">Nombre participante 2:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control bg-opacity-75" id="Input_nombre_2" placeholder="Nombre"
+                        aria-describedby="textHelp">
+                    <div id="textHelp" class="form-text px-2">Ingrese unicamente el nombre en mayusculas.</div>
+                </div>
+                <label for="Input_apellido_2" class="form-label">
+                    <h5 class="py-2">Apellido participante 2:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control bg-opacity-75" id="Input_apellido_2" placeholder="Apellido"
+                        aria-describedby="textHelp">
+                    <div id="textHelp" class="form-text px-2">Ingrese unicamente el apellido en mayusculas.</div>
+                </div>
+                <label for="Input_fecha_n2" class="form-label">
+                    <h5 class="py-2">Fecha de nacimiento participante 2:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control bg-opacity-75" id="Input_fecha_n2" placeholder="Fecha de Nacimiento"
+                        aria-describedby="dateHelp">
+                    <div id="dateHelp" class="form-text px-2">Busca tu fecha de nacimiento.</div>
+                </div>
+            </form>
+        </div>
+        <div class="row px-4 mb-3">
+            <div class="col-5">
+                <br>
+                <input type="submit" class="btn btn-primary" value="calcular" onclick="calcular_edad()">
+            </div>
+        </div>
+        <div class="row px-4 mb-3">
+            <div class="col-5">
+                <br>
+                <span id="mayor"></span>
+                <br>
+                <span id="menor"></span>
+            </div>
+        </div>
+    </div>
+    <script src="../Js/ej10.js"></script>
+    <!-- Desactivar submit de formulario con enter, solo permite usar el boton de "calcular" -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('input[type=number]').forEach( node => node.addEventListener('keypress', e => {
+          if(e.keyCode == 13) {
+            e.preventDefault();
+          }
+        }))
+      });</script>
+</body>
+
+</html>

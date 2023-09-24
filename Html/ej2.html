@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>Ejercicios JavaScript #2</title>
+</head>
+
+<body>
+    <h1 class="py-2 px-5">Calculador de Precios.</h1>
+    
+    <div class="row px-4 mx-0">
+        <h3 class="py-2">Bienvenido al calculador de precios.</h3>
+        <p>Por favor ingresa la cantidad de camisas que vas a comprar.
+        Recuerda que tienes 20% de descuento desde 3 camimas en adelante:</p>
+        <div class="col-5">
+            <form action="" method="get" id="calculadora">
+                <label for="Input_cantidad" class="form-label">
+                    <h5 class="py-2">Cantidad:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_cantidad" min="1" placeholder="3"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero sin puntos o comas desde 1 en adelante.</div>
+                </div>
+                
+            </form>
+            <input type="submit" class="btn btn-primary" value="Calcular" onclick="calcular_descuento()">
+        </div>
+        <div class="row px-4 mb-3">
+            <div class="col-5" id="resultados">
+                <br>
+                <p>Aqui puedes ver el descuento:</p>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <script src="../JS/ej2.js"></script>
+    <!-- Desactivar submit de formulario con enter, solo permite usar el boton de "calcular" -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('input[type=number]').forEach( node => node.addEventListener('keypress', e => {
+          if(e.keyCode == 13) {
+            e.preventDefault();
+          }
+        }))
+      });</script>
+</body>
+
+</html>
